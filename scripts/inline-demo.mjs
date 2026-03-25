@@ -11,7 +11,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const assetsDir = path.join(root, 'portfolio/app/assets');
+const assetsDir = path.join(root, 'docs/app/assets');
 
 if (!fs.existsSync(assetsDir)) {
   console.error('❌  portfolio/app/assets not found — run `npm run build` first.');
@@ -33,7 +33,7 @@ const css = fs.readFileSync(path.join(assetsDir, cssFile), 'utf8');
 const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><style>${css}</style></head><body><div id="root"></div><script type="module">${js}</script></body></html>`;
 
 const out = `window.__DEMO_SRCDOC__=${JSON.stringify(html)};`;
-fs.writeFileSync(path.join(root, 'portfolio/demo-inline.js'), out);
+fs.writeFileSync(path.join(root, 'docs/demo-inline.js'), out);
 
 const kb = Math.round(out.length / 1024);
-console.log(`✓  portfolio/demo-inline.js generated (${kb} KB) — open portfolio/index.html directly.`);
+console.log(`✓  docs/demo-inline.js generated (${kb} KB) — open docs/index.html directly.`);

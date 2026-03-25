@@ -16,7 +16,7 @@ export default defineConfig({
   assetsInclude: ['**/*.svg', '**/*.csv'],
   base: './',
   build: {
-    outDir: 'portfolio/app',
+    outDir: 'docs/app',
     emptyOutDir: true,
   },
 })
